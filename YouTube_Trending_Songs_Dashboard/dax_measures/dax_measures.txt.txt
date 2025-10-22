@@ -1,0 +1,98 @@
+===========================
+DAX Measures – YouTube Trending Songs Dashboard
+===========================
+
+-- ✅ Total Songs
+Total Songs =
+    DISTINCTCOUNT('YouTube Songs Clean'[title])
+
+-- ✅ Total Channels
+Total Channels =
+    DISTINCTCOUNT('YouTube Songs Clean'[channel])
+
+-- ✅ Total Views
+Total Views =
+    SUM('YouTube Songs Clean'[view_count])
+
+-- ✅ Average Views per Song
+Average Views per Song =
+    AVERAGE('YouTube Songs Clean'[view_count])
+
+-- ✅ Average Song Duration (Minutes)
+Average Duration (min) =
+    AVERAGE('YouTube Songs Clean'[duration_min])
+
+-- ✅ Popularity Score (views adjusted by followers)
+Average Popularity Score =
+    AVERAGEX(
+        'YouTube Songs Clean',
+        DIVIDE('YouTube Songs Clean'[view_count], 'YouTube Songs Clean'[channel_follower_count] + 1)
+    )
+
+-- ✅ Total Views by Category (for category chart)
+Total Views by Category =
+    SUM('YouTube Songs Clean'[view_count])
+
+-- ✅ Top Channel Name
+Top Channel Name =
+VAR TopChannel =
+    TOPN(
+        1,
+        SUMMARIZE(
+            'YouTube Songs Clean',
+            'YouTube Songs Clean'[channel],
+            "TotalViews", SUM('YouTube Songs Clean'[view_count])
+        ),
+        [TotalViews], DESC
+    )
+RETURN
+    MAXX(TopChannel, 'YouTube Songs Clean'[channel])
+
+-- ✅ Top Channel Views
+Top Channel Views =
+VAR TopChannel =
+    TOPN(
+        1,
+        SUMMARIZE(
+            'YouTube Songs Clean',
+            'YouTube Songs Clean'[channel],
+            "TotalViews", SUM('YouTube Songs Clean'[view_count])
+        ),
+        [TotalViews], DESC
+    )
+RETURN
+    MAXX(TopChannel, [TotalViews])
+
+-- ✅ Median Views (optional)
+Median Views =
+    MEDIAN('YouTube Songs Clean'[view_count])
+
+-- ✅ Song Length Buckets (calculated column)
+-- Add this as a COLUMN, not a measure:
+-- Length Bucket =
+-- SWITCH(
+--     TRUE(),
+--     'YouTube Songs Clean'[duration_min] < 2, "<2 min",
+--     'YouTube Songs Clean'[duration_min] < 4, "2–4 min",
+--     'YouTube Songs Clean'[duration_min] < 6, "4–6 min",
+--     'YouTube Songs Clean'[duration_min] < 10, "6–10 min",
+--     ">10 min"
+-- )
+
+-- ✅ Popularity Rank (optional)
+Popularity Rank =
+    RANKX(
+        ALL('YouTube Songs Clean'[title]),
+        [Average Popularity Score],
+        ,
+        DESC
+    )
+
+-- ✅ View Rank (optional)
+View Rank =
+    RANKX(
+        ALL('YouTube Songs Clean'[title]),
+        [Total Views],
+        ,
+        DESC
+    )
