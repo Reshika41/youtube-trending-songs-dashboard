@@ -1,0 +1,66 @@
+{
+  "name": "YouTube Dark – Advanced",
+  "background": "#0F0F0F",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#FF0000",
+
+  "dataColors": [
+    "#FF0000",
+    "#1E90FF",
+    "#FFA500",
+    "#8A2BE2",
+    "#00BFA6",
+    "#F4D03F",
+    "#FF5252",
+    "#A3E635"
+  ],
+
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          { "show": true, "color": "#0F0F0F", "transparency": 0 }
+        ]
+      }
+    },
+
+    "card": {
+      "*": {
+        "background": [
+          { "show": true, "color": "#212121", "transparency": 0 }
+        ],
+        "border": [
+          { "show": true, "color": "#3D3D3D", "width": 1 }
+        ],
+        "categoryLabels": [
+          { "show": true, "color": "#AAAAAA", "fontSize": 11, "fontFamily": "Segoe UI" }
+        ],
+        "labels": [
+          {
+            "show": true,
+            "color": "#FFFFFF",
+            "fontSize": 24,
+            "fontFamily": "Segoe UI",
+            "fontWeight": "bold",
+            "displayUnits": 0,
+            "precision": 1
+          }
+        ],
+        "title": [
+          { "show": false }
+        ],
+
+        /* Not all builds honor 'shape' via themes; if ignored, set in UI and copy with Format painter */
+        "shape": [
+          { "show": true, "cornerRadius": 16 }
+        ]
+      }
+    }
+  },
+
+  "textClasses": {
+    "title":  { "color": "#FFFFFF" },
+    "label":  { "color": "#AAAAAA" },
+    "callout":{ "color": "#FFFFFF" }
+  }
+}

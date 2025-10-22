@@ -1,0 +1,100 @@
+{
+  "name": "YouTube Dark – Slicer Pro",
+  "background": "#0F0F0F",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#FF0000",
+
+  "dataColors": [
+    "#FF0000",
+    "#1E90FF",
+    "#FFA500",
+    "#8A2BE2",
+    "#00BFA6",
+    "#F4D03F",
+    "#FF5252",
+    "#A3E635"
+  ],
+
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          { "show": true, "color": "#0F0F0F", "transparency": 0 }
+        ]
+      }
+    },
+
+    "slicer": {
+      "*": {
+        /* Card/container look */
+        "background": [
+          { "show": true, "color": "#212121", "transparency": 0 }
+        ],
+        "border": [
+          { "show": true, "color": "#3D3D3D", "width": 1 }
+        ],
+
+        /* Values in the list/dropdown */
+        "items": [
+          {
+            "color": "#FFFFFF",           /* text in list */
+            "fontSize": 12,
+            "fontFamily": "Segoe UI"
+          }
+        ],
+
+        /* Dropdown panel + popup */
+        "dropdown": [
+          {
+            "background": "#212121",      /* inside popup panel */
+            "outline": "none",
+            "borderColor": "#3D3D3D"
+          }
+        ],
+
+        /* Selected/hover states */
+        "selection": [
+          {
+            "singleSelect": true,
+            "selectAll": false,
+            "accentColor": "#FF0000",     /* selected value highlight */
+            "hoverColor": "#333333"
+          }
+        ],
+
+        /* Header/title off for a cleaner look */
+        "title": [
+          { "show": false }
+        ]
+      }
+    },
+
+    /* Keep KPI cards consistent (optional) */
+    "card": {
+      "*": {
+        "background": [
+          { "show": true, "color": "#212121", "transparency": 0 }
+        ],
+        "border": [
+          { "show": true, "color": "#3D3D3D", "width": 1 }
+        ],
+        "categoryLabels": [
+          { "show": true, "color": "#AAAAAA", "fontSize": 11 }
+        ],
+        "labels": [
+          {
+            "show": true,
+            "color": "#FFFFFF",
+            "fontSize": 24,
+            "fontWeight": "bold",
+            "displayUnits": 0,
+            "precision": 1
+          }
+        ],
+        "title": [
+          { "show": false }
+        ]
+      }
+    }
+  }
+}

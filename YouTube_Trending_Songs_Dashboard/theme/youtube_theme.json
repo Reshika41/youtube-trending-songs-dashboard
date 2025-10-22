@@ -1,0 +1,22 @@
+{
+  "name": "YouTube Dark",
+  "foreground": "#FFFFFF",
+  "background": "#0F0F0F",
+  "tableAccent": "#FF0000",
+  "visualStyles": {},
+  "dataColors": [
+    "#FF0000",
+    "#1E90FF",
+    "#FFA500",
+    "#8A2BE2",
+    "#00BFA6",
+    "#F4D03F",
+    "#FF5252",
+    "#A3E635"
+  ],
+  "textClasses": {
+    "callout": { "color": "#FFFFFF" },
+    "title": { "color": "#FFFFFF" },
+    "label": { "color": "#AAAAAA" }
+  }
+}
